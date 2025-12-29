@@ -3,16 +3,18 @@ plugins {
     id 'application'
 }
 
-group 'com.luiscacuango'
-version '0.1.0'
+group = 'com.luiscacuango'
+version = '0.1.0'
 
-// Usar el número directamente como String evita el error "No such property"
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
+java {
+    // Esta es la forma moderna que reconoce SDKMAN y tu instalación local
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 
 application {
-    // Usamos la propiedad antigua por si tu Gradle de sistema es viejo
-    mainClassName = "com.luiscacuango.jobsearch.JobSearch"
+    mainClass = "com.luiscacuango.jobsearch.JobSearch"
 }
 
 repositories {
@@ -20,7 +22,14 @@ repositories {
 }
 
 dependencies {
+    // JCommander para el parseo de argumentos CLI
     implementation("com.beust:jcommander:1.82")
+
+    // Feign para el consumo declarativo de APIs
     implementation("io.github.openfeign:feign-core:13.6")
     implementation("io.github.openfeign:feign-gson:13.6")
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
