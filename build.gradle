@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.luiscacuango'
+version '0.1.0'
+
+// Usar el número directamente como String evita el error "No such property"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+application {
+    // Usamos la propiedad antigua por si tu Gradle de sistema es viejo
+    mainClassName = "com.luiscacuango.jobsearch.JobSearch"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("com.beust:jcommander:1.82")
+    implementation("io.github.openfeign:feign-core:13.6")
+    implementation("io.github.openfeign:feign-gson:13.6")
+}
