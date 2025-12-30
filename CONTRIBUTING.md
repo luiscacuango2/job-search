@@ -11,7 +11,7 @@ Para mantener el historial del proyecto limpio, seguimos el modelo de *Fork & Pu
 1.  **Fork**: Crea una copia del repositorio en tu perfil de GitHub.
 2.  **Clonación**: Trae el código a tu máquina local.
     ```bash
-    git clone [https://github.com/tu-usuario/job-search.git](https://github.com/tu-usuario/job-search.git)
+    git clone https://github.com/luiscacuango2/job-search.git
     cd job-search
     ```
 3.  **Rama de Trabajo**: Crea una rama descriptiva para tus cambios.
